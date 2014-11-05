@@ -1,0 +1,1 @@
+Hi I'm Tim Feirg, This repo host my workspace setup including vim, iterm2, tmux, zsh, I do a lot of python and ssh so some or most of it may not suit your style, I've been using vim for only roughly 2 months and caught a minor glimpse of vim and z shell, however every bit of configuration is properly commented and carefully compared, I hope it helps

@@ -1,0 +1,70 @@
+Tim Feirg
+=========
+
+> <timfeirg@gmail.com> • +86 159 2035 3036 • 21 years old 
+> 
+> Sun Yat-sen University, Xiaoguwei Island, Panyu District, Guangzhou 510006, P. R. China
+
+Background
+----------
+
+I major in Bio-medical Engineering at _Sun Yat-sen University_ and later
+specialize in medical electrical equipment. The course always interest
+me but I decide not to enter the health care industry. I'm vastly
+interested in programming, signal and image processing, MCU programming
+and product design.
+
+I regard myself as a quick learner and I'm proud of my taste towards
+technology and products. I have done a few projects by now and upon the
+accomplishment of each one I'm more ready for real work.
+
+---
+
+2011 - now
+:   Study in SYSU, Bio-medical Engineering, specialize in medical electrical equipment.
+
+2014 - now
+:   Internship in [RICEBOOK](http://www.ricebook.com/) as database engineer.
+
+Projects & Capabilities
+-------------------------
+
+Projects that's been presented here are the ones that best describe my
+capabilities, I have the honor to serve teaching assistant in _Digital
+Image Processing_ so some of the project readmes are in Chinese, they're
+actually project manuals that I wrote for the class.
+
+---
+
+C++, C, Python
+:   Quite familiar with these languages, check out the project below to see how good or terrible my code is.
+
+OpenCV
+:   The best finished ones are [2D Fourier Transform and Basic Filtering](https://github.com/kkcocogogo/2-D-fourier-transform) in C++ and [Shape Detection Using Common Classifiers](https://github.com/kkcocogogo/Fourier-Descriptors) in Python.
+
+MCU
+:   [electronic passcode lock based on a 8051 board](https://github.com/kkcocogogo/8051MCU_lock).
+
+DSP
+:   `MATLAB` program [Dial Tone Detection](https://github.com/kkcocogogo/Dial-Tone-Detection), which is able to recognise the phone number dialed in an audio file.
+
+Product Design
+:   [The exterior of _ANDE Breathing Machine_](https://onedrive.live.com/redir?resid=73E70F9DE102435A!1138&authkey=!AEIERzKdeea_OPs&ithint=folder%2c.JPG), using _SolidWorks_.
+
+Linux
+:   I'm quite familiar with Linux, my daily operating system is Mac OS.
+
+Misc
+:   `HTML` and `CSS`, which I learned in 2 days to finish [this resume](https://github.com/kkcocogogo/kkcocogogo.github.io). DSP and math programming tools like `Mathematica` and `MATLAB`. _Adobe® Photoshop_ and _Premiere_.
+
+Activities and Interest
+--------------------------
+
+Hobbies
+:   Open source communities like `Github`, `StackOverflow`, Photography and some movie making ☺, anything a geek would like.
+
+Sports
+:   Cycling, swimming.
+
+---
+[中文版](index_ch.html)

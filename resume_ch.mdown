@@ -1,0 +1,45 @@
+
+# 刘奕夫
+
+---
+
+> <timfeirg@gmail.com> • +86 159 2035 3036 • 广州市番禺区中山大学慎思园10号，510006
+
+---
+
+## 教育背景
+
+2011/05 ~ 目前
+:   中山大学-工学院-生物医学工程系-医疗器械方向
+
+## 项目经验和个人技能
+
+C++, C
+:   C++下用`OpenCV`开发，用C语言进行51单片机编程。
+
+OpenCV
+:   [二维傅里叶变换与简单滤波](https://github.com/kkcocogogo/2-D-fourier-transform)，[基本色彩操纵](https://github.com/kkcocogogo/Color-Manipulation)，目前在做对象识别方面的课程项目，
+
+单片机
+:   [51单片机密码锁程序](https://github.com/kkcocogogo/8051MCU_lock)
+
+数字信号处理
+:   [拨号音识别](https://github.com/kkcocogogo/Dial-Tone-Detection)：根据电话拨号的声音识别出录入的电话号码。
+
+产品设计
+:   [呼吸机外观设计](https://onedrive.live.com/redir?resid=73E70F9DE102435A!1138&authkey=!AEIERzKdeea_OPs&ithint=folder%2c.JPG)：为*安德生物科技有限公司*举办的*呼吸机外观设计大赛*二等奖作品。用*SolidWorks*制作。
+
+Linux
+:   熟悉`Linux，常用Mac OS，Ubuntu，三种操作系统都能熟练使用。
+
+其他
+:   两天内学习`HTML`与`CSS`，完成[这份简历](https://github.com/kkcocogogo/kkcocogogo.github.io)、用`MATLAB`与`Mathematica`两种编程环境进行信号处理以及数学运算编程。熟用 *Adobe® Photoshop* 与 *Premiere*。
+
+## 兴趣爱好
+
+正在书写。
+
+
+---
+
+[English version](index.html)

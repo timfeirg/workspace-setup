@@ -1,0 +1,73 @@
+
+/* Whole document */
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	width: 88%;
+	margin: auto;
+	background: #FFFFFF;
+	padding: 10px 10px 10px 10px;
+}
+
+/* Title */
+h1 {
+	font-size: 55px;
+	color: #000000;
+	text-align: center;
+	margin-bottom: 15px;
+}
+h1:hover {
+    background-color: #757575;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 1px #333;
+}
+
+/* Titles of categories */
+h2 {
+	text-align:center;
+	background-color: #397249;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 1px #333;
+}
+
+/* Definitions */
+dt {
+	float: left;
+	clear: left;
+	width: 16%;    /*font-weight: bold;*/
+	font-weight: bolder;
+}
+dd {
+	margin-left: 18%;
+	margin-bottom: 10px;
+}
+
+p {
+    margin-top:0;
+    margin-bottom:7px;
+}
+/* code */
+code {
+	font:Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+	font-size:17px
+}
+/* Blockquotes */
+blockquote {
+    text-align: center
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #397249;
+}
+a:hover, a:active {
+    background-color: #397249;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #333;
+}
+
+/* Horizontal separators */
+hr {
+    color: #A6A6A6;
+}
