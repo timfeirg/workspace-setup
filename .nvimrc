@@ -151,8 +151,24 @@ call plug#end()
 
 " general vim settings {
 
+" escape key take immediate effect
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        autocmd InsertEnter * set timeoutlen=0
+        autocmd InsertLeave * set timeoutlen=1000
+    augroup END
+endif
+
+let mapleader=","
+nnoremap ; :
+vnoremap ; :
+nmap j gj
+nmap k gk
+
 set inccommand=split
-nnoremap <Leader>s :%s/
+nnoremap <leader>s :%s/
 
 set foldnestmax=1
 set clipboard=unnamed
@@ -205,26 +221,6 @@ set background=dark
 colorscheme solarized
 highlight Comment cterm=italic
 " make tilde sign darker
-" }
-
-" vim key mapping {
-" escape key take immediate effect
-if ! has('gui_running')
-    set ttimeoutlen=10
-    augroup FastEscape
-        autocmd!
-        autocmd InsertEnter * set timeoutlen=0
-        autocmd InsertLeave * set timeoutlen=1000
-    augroup END
-endif
-
-" remap leader key
-let mapleader=","
-" ';' key will enter command mode
-nnoremap ; :
-vnoremap ; :
-nmap j gj
-nmap k gk
 " }
 
 " filetype handling {
@@ -463,7 +459,7 @@ nnoremap <C-space> :CtrlPMixed<CR>
 nnoremap <leader>; :CtrlPCmdline<CR>
 " yankring {
 let g:ctrlp_yankring_limit = 100
-nnoremap <Leader>p :CtrlPYankring<CR>
+nnoremap <leader>p :CtrlPYankring<CR>
 " }
 " funky {
 " after jump, move code to the center and open fold recursively
