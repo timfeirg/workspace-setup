@@ -116,9 +116,6 @@ Plug 'haya14busa/vim-asterisk'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 
-" interactive search & replace
-Plug 'osyo-manga/vim-over'
-
 " }
 
 " special file type handler {
@@ -153,6 +150,9 @@ call plug#end()
 " }
 
 " general vim settings {
+
+set inccommand=split
+nnoremap <Leader>s :%s/
 
 set foldnestmax=1
 set clipboard=unnamed
@@ -486,12 +486,6 @@ let g:EasyClipUseYankDefaults = 0
 nmap M m$
 nnoremap gm m
 "
-
-" vim-over {
-set gdefault
-" this will directly enter search and replace
-nnoremap <Leader>s :OverCommandLine<CR>%s/
-" }
 
 " vim asterisk {
 map *   <Plug>(asterisk-*)
