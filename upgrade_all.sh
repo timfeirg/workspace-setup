@@ -3,4 +3,4 @@ bubu
 upgrade_oh_my_zsh
 antigen update
 antigen selfupdate
-pip install --upgrade -r ~/workspace-setup/requirements.txt
+pip2 install --upgrade -r ~/workspace-setup/requirements.txt

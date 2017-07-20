@@ -471,6 +471,8 @@
 	<true/>
 	<key>DisableFullscreenTransparency</key>
 	<true/>
+	<key>EnableProxyIcon</key>
+	<false/>
 	<key>EnableRendezvous</key>
 	<false/>
 	<key>FocusFollowsMouse</key>
@@ -542,7 +544,7 @@
 	gAKACoAN0xAJChEVGVdOUy5rZXlzoxITFIADgASABaMWFxiABoAHgAiACVpJZGVudGlm
 	aWVyVVdpZHRoVkhpZGRlblEwI0BowAAAAAAACNIhIiMkWiRjbGFzc25hbWVYJGNsYXNz
 	ZXNcTlNEaWN0aW9uYXJ5oiMlWE5TT2JqZWN00xAJCicrGaMSExSAA4AEgAWjLC0YgAuA
-	DIAIgAlRMSNAczAAAAAAANIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
+	DIAIgAlRMSNAdCAAAAAAANIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
 	TlNLZXllZEFyY2hpdmVy0Tg5VUFycmF5gAEACAARABoAIwAtADIANwBGAEwAUQBcAGMA
 	ZgBoAGoAbABzAHsAfwCBAIMAhQCJAIsAjQCPAJEAnACiAKkAqwC0ALUAugDFAM4A2wDe
 	AOcA7gDyAPQA9gD4APwA/gEAAQIBBAEGAQ8BFAEjAScBLwFBAUQBSgAAAAAAAAIBAAAA
@@ -574,13 +576,13 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>-1028 1608 620 392 -1440 0 1440 2537 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>-1171 141 606 456 -1440 0 1440 2537 </string>
+	<string>217 23 606 469 0 0 1280 777 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>296 282 918 495 0 0 1280 777 </string>
+	<string>-1082 616 1018 447 -1440 0 1440 2537 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>80 193 592 584 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 2 570 775 0 0 1280 777 </string>
+	<string>-1440 0 1440 2560 -1440 0 1440 2537 </string>
 	<key>NeverWarnAboutShortLivedSessions_82EABC1C-6D7E-444E-B4C0-58CC6C67E814</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_82EABC1C-6D7E-444E-B4C0-58CC6C67E814_selection</key>
@@ -1451,7 +1453,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-07-03T01:02:36Z</date>
+	<date>2017-07-12T01:29:44Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -1504,6 +1506,8 @@
 	<string>/-+\~_.</string>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
