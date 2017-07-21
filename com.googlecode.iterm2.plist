@@ -566,7 +566,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>1703 992 445 77 1280 0 1440 2537 </string>
+	<string>-1017 858 445 77 -1440 0 1440 2537 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>342 305 606 456 0 0 1280 777 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
@@ -578,11 +578,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>217 23 606 469 0 0 1280 777 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-1082 616 1018 447 -1440 0 1440 2537 </string>
+	<string>269 139 796 473 0 0 1280 777 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>80 193 592 584 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1440 0 1440 2560 -1440 0 1440 2537 </string>
+	<string>0 0 1280 800 0 0 1280 777 </string>
 	<key>NeverWarnAboutShortLivedSessions_82EABC1C-6D7E-444E-B4C0-58CC6C67E814</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_82EABC1C-6D7E-444E-B4C0-58CC6C67E814_selection</key>
@@ -1312,6 +1312,8 @@
 			<real>0.0</real>
 			<key>Triggers</key>
 			<array/>
+			<key>Unicode Version</key>
+			<integer>9</integer>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -1453,7 +1455,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-07-12T01:29:44Z</date>
+	<date>2017-07-22T06:41:31Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>

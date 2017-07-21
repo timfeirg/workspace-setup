@@ -90,7 +90,7 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 
 " auto insert close brackets
-Plug 'Raimondi/delimitMate'
+Plug 'jiangmiao/auto-pairs'
 
 " nerdcommenter has a great name, but it just don't get python comments,
 " besides, tcomment_vim is more actively developed
@@ -166,8 +166,17 @@ nnoremap ; :
 vnoremap ; :
 nmap j gj
 nmap k gk
+" Saner command-line history
+cnoremap <c-n>  <down>
+cnoremap <c-p>  <up>
+" de-highlight when redraw
+nnoremap <leader>l :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
+" Don't lose selection when shifting sidewards
+xnoremap <  <gv
+xnoremap >  >gv
 
 set inccommand=split
+set gdefault
 nnoremap <leader>s :%s/
 
 set foldnestmax=1
@@ -175,7 +184,6 @@ set clipboard=unnamed
 
 " no mouse
 set mouse=
-set guicursor=
 
 " Start an external command with a single bang
 nnoremap ! :!
@@ -218,7 +226,10 @@ set fillchars-=vert:\|
 set splitbelow
 set splitright
 set background=dark
+
 colorscheme solarized
+" hide tildes
+hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 highlight Comment cterm=italic
 " make tilde sign darker
 " }
@@ -514,16 +525,6 @@ map g/ <Plug>(incsearch-stay)
 map z/ <Plug>(incsearch-fuzzy-/)
 map z? <Plug>(incsearch-fuzzy-?)
 map zg/ <Plug>(incsearch-fuzzy-stay)
-" }
-
-" delimitMate {
-let delimitMate_nesting_quotes = ['"','`']
-let delimitMate_jump_expansion = 1
-let delimitMate_expand_space = 1
-let delimitMate_expand_cr = 1
-" python doc string require this
-au FileType python let b:delimitMate_expand_inside_quotes = 1
-au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
 " }
 
 " }
