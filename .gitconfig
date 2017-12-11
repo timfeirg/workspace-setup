@@ -1,0 +1,13 @@
+[user]
+	email = kkcocogogo@gmail.com
+	name = timfeirg
+[push]
+	default = current
+[url "git@gitlab.ricebook.net:"]
+	insteadOf = https://gitlab.ricebook.net/
+[http "https://gopkg.in"]
+	followRedirects = true
+[http]
+	followRedirects = true
+[https]
+	followRedirects = true
