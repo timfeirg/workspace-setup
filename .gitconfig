@@ -1,6 +1,7 @@
 [user]
 	email = kkcocogogo@gmail.com
 	name = timfeirg
+	signingkey = CAF17CF390660A7D
 [push]
 	default = current
 [url "git@gitlab.ricebook.net:"]

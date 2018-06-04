@@ -46,6 +46,8 @@ Plug 'terryma/vim-multiple-cursors'
 
 " git integration, :Gvdiff command is extremely useful
 Plug 'tpope/vim-fugitive'
+" unix helpers like SudoEdit, Delete
+Plug 'tpope/vim-eunuch'
 
 " }
 
@@ -63,7 +65,11 @@ Plug 'ntpeters/vim-better-whitespace'
 " edit code snippet in a separate buffer
 Plug 'chrisbra/NrrwRgn'
 
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --gocode-completer --tern-completer' }
+Plug 'nixprime/cpsm', { 'do': 'PY3=ON ./install.sh' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'davidhalter/jedi-vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 
@@ -122,7 +128,6 @@ Plug 'fatih/vim-go'
 " highlight csv files
 Plug 'chrisbra/csv.vim'
 
-Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'tmhedberg/SimpylFold'
 
 " A solid language pack for Vim.
@@ -163,9 +168,6 @@ nnoremap ; :
 vnoremap ; :
 nmap j gj
 nmap k gk
-" Saner command-line history
-cnoremap <c-n>  <down>
-cnoremap <c-p>  <up>
 " de-highlight when redraw
 nnoremap <leader>l :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
 " Don't lose selection when shifting sidewards
@@ -174,8 +176,8 @@ xnoremap >  >gv
 
 nnoremap <leader>s :%s/
 
-
 nnoremap ! :!
+" save when cursor leaves buffer
 autocmd BufLeave,FocusLost * silent! wall
 noremap <C-q> :wqa<CR>
 " handy sudo
@@ -230,7 +232,6 @@ autocmd BufRead,BufNewFile *.zsh-theme set filetype=zsh
 autocmd BufRead,BufNewFile *.hql set filetype=hive expandtab
 autocmd BufRead,BufNewFile *.q set filetype=hive expandtab
 
-autocmd FileType go nnoremap <C-c>g :<C-u>call go#def#Jump("vsplit")<CR>
 autocmd FileType python setlocal nonumber nowrap
 autocmd FileType json setlocal expandtab shiftwidth=2 softtabstop=2
 autocmd FileType vue setlocal expandtab shiftwidth=2 softtabstop=2
@@ -243,6 +244,7 @@ autocmd FileType css setlocal shiftwidth=2
 autocmd FileType zsh setlocal shiftwidth=2
 autocmd FileType sh setlocal shiftwidth=2
 autocmd FileType lua setlocal expandtab shiftwidth=2 softtabstop=2
+" see https://github.com/posva/vim-vue#my-syntax-highlighting-stops-working-randomly
 autocmd FileType vue syntax sync fromstart
 " }
 " }
@@ -264,62 +266,64 @@ let g:snips_author = 'timfeirg'
 let g:snips_github = 'https://github.com/timfeirg/'
 " }
 
-" YouCompleteMe ycm {
-nnoremap <C-c>g :YcmCompleter GoTo<CR>
-nnoremap K :YcmCompleter GetDoc<CR>
-let g:ycm_python_binary_path = 'python'
-let g:ycm_goto_buffer_command = 'vertical-split'
-let g:ycm_key_list_select_completion = ['<TAB>']
-let g:ycm_key_list_previous_completion = ['<S-TAB>']
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_min_num_identifier_candidate_chars = 4
-let g:ycm_complete_in_comments = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_gocode_binary_path = 'gocode'
-let g:ycm_godef_binary_path = 'godef'
-let g:ycm_filetype_blacklist = {
-			\ 'tagbar' : 1,
-			\ 'qf' : 1,
-			\ 'notes' : 1,
-			\ 'unite' : 1,
-			\ 'text' : 1,
-			\ 'vimwiki' : 1,
-			\ 'pandoc' : 1,
-			\ 'infolog' : 1,
-			\ 'mail' : 1
-			\}
+" deoplete {
+let g:deoplete#enable_at_startup = 1
+if !exists('g:deoplete#omni#input_patterns')
+    let g:deoplete#omni#input_patterns = {}
+endif
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function() abort
+    return deoplete#close_popup() . "\<CR>"
+endfunction
+let g:deoplete#enable_smart_case = 1
+let g:deoplete#sources#jedi#show_docstring = 1
+" use tab / shift-tab to cycle through candidates
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+call deoplete#custom#source('_', 'matchers', ['matcher_cpsm'])
+call deoplete#custom#var('buffer', 'require_same_filetype', v:false)
+call deoplete#custom#option('sources', {
+            \ '_': ['buffer', 'ultisnips'],
+            \ 'python': ['ultisnips', 'jedi', 'buffer'],
+            \ 'go': ['ultisnips', 'go', 'buffer'],
+            \})
+" automatically close the scratch window
+" see https://gregjs.com/vim/2016/configuring-the-deoplete-asynchronous-keyword-completion-plugin-with-tern-for-vim/
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+" }
+
+" jedi-vim {
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#goto_command = '<C-c>g'
+let g:jedi#goto_definitions_command = ''  " dynamically done for ft=python.
+let g:jedi#use_tabs_not_buffers = 0  " current default is 1.
+let g:jedi#rename_command = '<C-c>rr'
+let g:jedi#usages_command = '<Leader>gu'
+let g:jedi#completions_enabled = 0
+let g:jedi#smart_auto_mappings = 1
+let g:jedi#documentation_command = 'K'
+let g:jedi#auto_close_doc = 1
+let g:jedi#use_splits_not_buffers = 'winwidth'
 " }
 
 " vim-go {
 autocmd FileType go set foldmethod=syntax
+autocmd FileType go nnoremap <C-c>g :<C-u>call go#def#Jump("vsplit")<CR>
+autocmd FileType go nnoremap <C-c>rr :GoRename<CR>
+let g:go_highlight_array_whitespace_error = 1
+let g:go_highlight_chan_whitespace_error = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_space_tab_error = 1
+let g:go_highlight_trailing_whitespace_error = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
-let g:go_highlight_interfaces = 1
 let g:go_highlight_build_constraints = 1
-" }
-
-" pymode python-mode {
-" pymode is useless except for the rope features, so I disabled everything
-let g:pymode_rope = 1
-let g:pymode_folding = 0
-let g:pymode_rope_goto_definition_bind = '<nop>'
-let g:pymode_rope_ropefolder = '../.ropeproject'
-let g:pymode_rope_completion = 0
-let g:pymode_rope_complete_on_dot = 0
-let g:pymode_rope_autoimport_import_after_complete = 1
-
-let g:pymode_lint = 0
-let g:pymode_run = 0
-let g:pymode_options_colorcolumn = 0
-
-let g:pymode_python = 'python3'
-let g:pymode_syntax = 0
-let g:pymode_virtualenv = 1
+let g:go_highlight_generate_tags = 1
+let g:go_highlight_string_spellcheck = 1
+let g:go_highlight_format_strings = 1
 " }
 
 " lua {
@@ -340,7 +344,7 @@ endfunction
 " NERDtree {
 " the origin T wasn't much use, so I remap both T and t: T for Tree and t for
 " tags looks intuitive to me
-nnoremap T :NERDTree<cr>
+nnoremap T :NERDTreeToggle %<cr>
 let NERDTreeShowFiles=1
 let NERDTreeRespectWildIgnore=1
 let NERDTreeQuitOnOpen=1
@@ -382,6 +386,7 @@ let g:EasyMotion_smartcase = 1
 let g:EasyMotion_inc_highlight = 1
 let g:EasyMotion_keys = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ;'
 let g:EasyMotion_enter_jump_first = 1
+let g:EasyMotion_skipfoldedline = 0
 " }
 
 " table mode {
@@ -422,9 +427,8 @@ nnoremap <leader>- :MaximizerToggle<CR>
 " ctrlp and plugins {
 let g:ctrlp_mruf_case_sensitive = 0
 let g:ctrlp_map = '<nop>'
-let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_tilde_homedir = 1
-let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
 let g:ctrlp_max_depth = 40
 let g:ctrlp_max_files = 99999
@@ -433,7 +437,6 @@ let g:ctrlp_custom_ignore = {
             \ 'dir':  'node_modules\|DS_Store\|git\|vendor\|_book',
             \ 'file': '\v\.(log|so|pyc)$',
             \ }
-" ctrl + space will launch file navigation
 nnoremap <C-@> :CtrlPMixed<CR>
 nnoremap <C-space> :CtrlPMixed<CR>
 " show all history vim commands and enter fuzzy search
