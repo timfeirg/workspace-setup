@@ -1,0 +1,39 @@
+[user]
+	email = kkcocogogo@gmail.com
+	name = timfeirg
+	signingkey = E0AABAE6842603BA
+[push]
+	default = current
+	followTags = true
+[http "https://gopkg.in"]
+	followRedirects = true
+[http]
+	followRedirects = true
+	version = HTTP/1.1
+[https]
+	followRedirects = true
+[commit]
+	gpgSign = true
+[gpg]
+	program = gpg
+[pager]
+	branch = false
+[color]
+	ui = true
+[hub]
+	protocol = https
+[url "https://github.com/"]
+	insteadOf = git@github.com:
+[core]
+    pager = delta
+[delta]
+    plus-style = syntax "#012800"
+    minus-style = normal "#340001"
+    theme = 'Monokai Extended'
+[interactive]
+    diffFilter = delta --color-only
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

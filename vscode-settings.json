@@ -1,0 +1,92 @@
+{
+    "workbench.colorTheme": "Braver's Solarized Light (themed workbench)",
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "nvim",
+    "vim.easymotion": true,
+    "vim.sneak": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j","j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>","d"],
+            "after": ["d", "d"]
+        },
+        {
+            "before":["<C-n>"],
+            "after":[],
+            "commands": [
+                {
+                    "command": ":nohl"
+                }
+            ]
+        }
+    ],
+    "vim.leader": ",",
+    "window.zoomLevel": 1,
+    "editor.minimap.enabled": false,
+    "python.linting.enabled": false,
+    "update.showReleaseNotes": false,
+    "editor.fontLigatures": false,
+    "markdown-pdf.executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "markdown.preview.fontFamily": "'PingFang SC', 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif",
+    "editor.wordWrapColumn": 50,
+    "editor.wrappingStrategy": "advanced",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "editor.wordWrap": "on",
+    "editor.tabSize": 8,
+    "editor.cursorStyle": "line",
+    "editor.insertSpaces": false,
+    "editor.lineNumbers": "on",
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "markdown-pdf.headerTemplate": "",
+    "markdown-pdf.margin.top": "0.5cm",
+    "markdown-pdf.margin.bottom": "0.5cm",
+    "markdown-pdf.margin.left": "0.5cm",
+    "markdown-pdf.margin.right": "0.5cm",
+    "editor.fontFamily": "monospace",
+    "files.insertFinalNewline": true,
+    "cSpell.userWords": [
+        "Ambari",
+        "ATTRCACHETO",
+        "blocksize",
+        "CACHEDIR",
+        "CACHEGROUP",
+        "CACHESIZE",
+        "classpath",
+        "dfsadmin",
+        "direntry",
+        "distcp",
+        "ENTRYCACHETO",
+        "extranet",
+        "Flink",
+        "groupname",
+        "HDFS",
+        "inodes",
+        "juicefs",
+        "juicesync",
+        "Kubernetes",
+        "Kylin",
+        "metacache",
+        "POSIX",
+        "rawstaging",
+        "readahead",
+        "rootdir",
+        "Sqoop",
+        "supergroup",
+        "writeback",
+        "znode"
+    ],
+    "files.trimTrailingWhitespace": true
+}

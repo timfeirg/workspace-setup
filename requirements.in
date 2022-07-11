@@ -1,0 +1,18 @@
+-i https://mirrors.cloud.tencent.com/pypi/simple/
+watchdog
+argh
+requests
+black
+pygments
+sqlparse
+neovim
+pip
+pip-tools
+python-lsp-server[all]
+virtualenv
+virtualenvwrapper
+isort
+devpi-client
+msgpack
+pre-commit
+mypy

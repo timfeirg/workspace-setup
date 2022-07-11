@@ -1,0 +1,45 @@
+# vi: ft=dosini
+[main]
+smart_completion = True
+multi_line = False
+destructive_warning = True
+log_file = ~/.mycli.log
+log_level = INFO
+timing = True
+table_format = psql
+syntax_style = default
+key_bindings = vi
+wider_completion_menu = False
+prompt = '\t \u@\h:\d> '
+
+[colors]
+# Completion menus.
+Token.Menu.Completions.Completion.Current = 'bg:#00aaaa #000000'
+Token.Menu.Completions.Completion = 'bg:#008888 #ffffff'
+Token.Menu.Completions.MultiColumnMeta = 'bg:#aaffff #000000'
+Token.Menu.Completions.ProgressButton = 'bg:#003333'
+Token.Menu.Completions.ProgressBar = 'bg:#00aaaa'
+
+# Selected text.
+Token.SelectedText = '#ffffff bg:#6666aa'
+
+# Search matches. (reverse-i-search)
+Token.SearchMatch = '#ffffff bg:#4444aa'
+Token.SearchMatch.Current = '#ffffff bg:#44aa44'
+
+# The bottom toolbar.
+Token.Toolbar.Off = 'bg:#222222 #888888'
+Token.Toolbar.On = 'bg:#222222 #ffffff'
+
+# Search/arg/system toolbars.
+Token.Toolbar.Search = 'noinherit bold'
+Token.Toolbar.Search.Text = 'nobold'
+Token.Toolbar.System = 'noinherit bold'
+Token.Toolbar.Arg = 'noinherit bold'
+Token.Toolbar.Arg.Text = 'nobold'
+
+[client]
+default-character-set=utf8
+
+# Favorite queries.
+[favorite_queries]

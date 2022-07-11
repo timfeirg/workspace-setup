@@ -1,0 +1,6 @@
+_site
+*.out
+.ropeproject
+*.min
+fanqiang.sh
+.nvimrc.mini
