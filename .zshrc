@@ -90,6 +90,7 @@ alias feature='git-feature'
 alias bug='git-feature -a bug'
 alias gsf='git-sync --force'
 alias refactor='git-feature -a refactor'
+alias gdb='git-delete-branch'
 
 # edit all files that match this ag search
 function agvi() {
