@@ -10,6 +10,8 @@
 	<true/>
 	<key>AllowClipboardAccess</key>
 	<true/>
+	<key>AlwaysOpenWindowAtStartup</key>
+	<true/>
 	<key>AnimateDimming</key>
 	<false/>
 	<key>AutoHideTmuxClientSession</key>
@@ -26,10 +28,6 @@
 	<true/>
 	<key>Control</key>
 	<integer>1</integer>
-	<key>Coprocess MRU</key>
-	<array>
-		<string>echo </string>
-	</array>
 	<key>CopyLastNewline</key>
 	<false/>
 	<key>CopySelection</key>
@@ -264,7 +262,7 @@
 	<key>DisallowCopyEmptyString</key>
 	<true/>
 	<key>DoubleClickPerformsSmartSelection</key>
-	<false/>
+	<true/>
 	<key>EnableAPIServer</key>
 	<true/>
 	<key>EnableDivisionView</key>
@@ -306,7 +304,7 @@
 	<key>HotKeyTogglesWindow</key>
 	<false/>
 	<key>Hotkey</key>
-	<false/>
+	<true/>
 	<key>HotkeyChar</key>
 	<integer>32</integer>
 	<key>HotkeyCode</key>
@@ -648,6 +646,8 @@
 			<string>No</string>
 			<key>Custom Directory</key>
 			<string>Recycle</string>
+			<key>Custom Locale</key>
+			<string>en_US.UTF-8</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Disable Printing</key>
@@ -1074,7 +1074,7 @@
 			<key>Send Code When Idle</key>
 			<false/>
 			<key>Set Local Environment Vars</key>
-			<true/>
+			<integer>2</integer>
 			<key>Shortcut</key>
 			<string></string>
 			<key>Show Mark Indicators</key>
@@ -1254,6 +1254,8 @@
 			<string>/Users/timfeirg</string>
 		</dict>
 	</array>
+	<key>NotifyOnlyForCriticalShellIntegrationUpdates</key>
+	<false/>
 	<key>NumberOfLinesForAccessibility</key>
 	<integer>1</integer>
 	<key>OnlyWhenMoreTabs</key>
@@ -1294,7 +1296,7 @@
 	<key>PromptOnQuit</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
-	<true/>
+	<false/>
 	<key>RightCommand</key>
 	<integer>8</integer>
 	<key>RightOption</key>

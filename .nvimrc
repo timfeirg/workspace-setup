@@ -78,7 +78,7 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'rafamadriz/friendly-snippets'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'fisadev/vim-isort'
 Plug 'vim-ruby/vim-ruby'
@@ -402,6 +402,11 @@ end,
 
 require('lspconfig').solc.setup{}
 
+require'lspconfig'.tsserver.setup{
+  filetypes = { "javascript", "typescript", "typescriptreact", "typescript.tsx" },
+  root_dir = function() return vim.loop.cwd() end
+}
+
 require('lspconfig').gopls.setup {
     cmd = {"gopls", "serve"},
     filetypes = {"go", "gomod"},
@@ -484,7 +489,6 @@ cmp.setup {
         { name = 'vsnip' }, -- For vsnip users.
         { name = 'buffer' },
         { name = 'path' },
-        { name = 'cmdline' },
       },
 }
 
