@@ -139,7 +139,8 @@ Plug 'Konfekt/FastFold'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-Plug 'lifepillar/vim-solarized8'
+Plug 'tjdevries/colorbuddy.nvim'
+Plug 'svrana/neosolarized.nvim'
 " }
 
 call plug#end()
@@ -241,14 +242,13 @@ set backspace=indent,eol,start
 
 " vim user interface {
 highlight NonText ctermfg=0
-set fillchars=eob:\ ,vert:\ 
+set fillchars=eob:\ 
 " Open new split panes to right and bottom, which feels more natural than
 " Vim’s default
 set splitbelow
 set splitright
 set background=dark
 set termguicolors
-colorscheme solarized8
 " }
 
 " filetype handling {
@@ -332,7 +332,7 @@ let g:show_spaces_that_precede_tabs = 1
 " nvim-lsp and completion plugins {
 set completeopt=menu,menuone,noinsert
 set scl=no
-autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync()
+autocmd BufWritePre *.go lua vim.lsp.buf.format()
 nnoremap <silent> gd :vsplit<CR><cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
@@ -346,6 +346,10 @@ smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l
 " https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
 " https://www.xgithub.com/2019/11/14/neovim-nvim-lsp-common-configurations-for-neovim-language-servers/
 lua << EOF
+require('neosolarized').setup({
+    comment_italics = true,
+    background_set = false,
+})
 local configs = require('lspconfig/configs')
 local util = require('lspconfig/util')
 local path = util.path
@@ -422,15 +426,15 @@ require('lspconfig').gopls.setup {
 }
 
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all",
-  sync_install = false,
-  auto_install = false,
-  ignore_install = { "javascript", "phpdoc" },
-  highlight = {
-    enable = true,
-    disable = { "phpdoc" },
-    additional_vim_regex_highlighting = false,
-  },
+    ensure_installed = {"python", "go"},
+    sync_install = false,
+    auto_install = true,
+    ignore_install = { "javascript", "phpdoc" },
+    highlight = {
+        enable = true,
+        disable = { "phpdoc" },
+        additional_vim_regex_highlighting = false,
+    },
 }
 
 vim.g.copilot_no_tab_map = true

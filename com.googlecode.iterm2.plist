@@ -1321,6 +1321,10 @@
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.13777426861702127</real>
+	<key>StatusBarPosition</key>
+	<integer>0</integer>
+	<key>StretchTabsToFillBar</key>
+	<true/>
 	<key>SuppressMultilinePasteWarningWhenNotAtShellPrompt</key>
 	<true/>
 	<key>SwitchPaneModifier</key>
