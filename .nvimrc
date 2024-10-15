@@ -78,7 +78,7 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'rafamadriz/friendly-snippets'
-Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdateSync' }
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'fisadev/vim-isort'
 Plug 'vim-ruby/vim-ruby'
@@ -139,8 +139,7 @@ Plug 'Konfekt/FastFold'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-Plug 'tjdevries/colorbuddy.nvim'
-Plug 'svrana/neosolarized.nvim'
+Plug 'lifepillar/vim-solarized8', { 'branch': 'neovim' }
 " }
 
 call plug#end()
@@ -241,14 +240,13 @@ set backspace=indent,eol,start
 " }
 
 " vim user interface {
+colorscheme solarized8
 highlight NonText ctermfg=0
 set fillchars=eob:\ 
 " Open new split panes to right and bottom, which feels more natural than
 " Vim’s default
 set splitbelow
 set splitright
-set background=dark
-set termguicolors
 " }
 
 " filetype handling {
@@ -346,10 +344,6 @@ smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l
 " https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
 " https://www.xgithub.com/2019/11/14/neovim-nvim-lsp-common-configurations-for-neovim-language-servers/
 lua << EOF
-require('neosolarized').setup({
-    comment_italics = true,
-    background_set = false,
-})
 local configs = require('lspconfig/configs')
 local util = require('lspconfig/util')
 local path = util.path
@@ -406,7 +400,7 @@ end,
 
 require('lspconfig').solc.setup{}
 
-require'lspconfig'.tsserver.setup{
+require'lspconfig'.ts_ls.setup{
   filetypes = { "javascript", "typescript", "typescriptreact", "typescript.tsx" },
   root_dir = function() return vim.loop.cwd() end
 }
@@ -427,7 +421,7 @@ require('lspconfig').gopls.setup {
 
 require'nvim-treesitter.configs'.setup {
     ensure_installed = {"python", "go"},
-    sync_install = false,
+    sync_install = true,
     auto_install = true,
     ignore_install = { "javascript", "phpdoc" },
     highlight = {

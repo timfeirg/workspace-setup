@@ -395,5 +395,6 @@
     "workbench.activityBar.location": "hidden",
     "markdown-pdf.clip.height": null,
     "markdown-pdf.height": "50cm",
-    "cSpell.enabled": false
+    "cSpell.enabled": false,
+    "files.autoGuessEncoding": true
 }

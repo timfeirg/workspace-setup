@@ -72,18 +72,10 @@ DEBIAN_PREVENT_KEYBOARD_CHANGES=yes
 export EDITOR=nvim
 alias agq='ag -Q'
 # export MANPAGER="nvim -c 'set ft=man' -"
-alias la='exa -alHbg --sort newest'
-alias l='exa -alHbg --sort newest'
 alias sudo='sudo '
 alias ktp='kubectl top pod'
 alias kgp='kubectl get pod -owide'
 
-# vagrant related
-alias vst="vagrant global-status --prune"
-alias vsh="vagrant ssh"
-alias vd="vagrant destroy -f"
-alias vup="vagrant up"
-alias vupp="SSH_AUTH_SOCK='' vagrant up --provision"
 # ansible related
 alias ave="ansible-vault edit"
 alias feature='git-feature'
