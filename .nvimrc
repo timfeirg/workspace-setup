@@ -88,7 +88,8 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 
 " Simplified clipboard functionality for Vim.
-Plug 'svermeulen/vim-easyclip'
+Plug 'svermeulen/vim-cutlass'
+Plug 'svermeulen/vim-subversive'
 
 " bunch of handy key-mappings
 Plug 'tpope/vim-unimpaired'
@@ -197,7 +198,7 @@ xnoremap >  >gv
 
 nnoremap <leader>s :%s/
 
-nnoremap ! :!
+nnoremap ! :%!
 " save when cursor leaves buffer
 autocmd BufLeave,FocusLost * silent! wall
 noremap <C-q> :wqa<CR>
@@ -672,11 +673,13 @@ nnoremap <leader>/ :CtrlPSearchHistory<CR>
 " }
 
 " vim-easyclip {
-let g:EasyClipUseSubstituteDefaults = 1
-let g:EasyClipUseYankDefaults = 0
-" M will cut till end of line, just like D to d
-nmap M m$
-nnoremap gm m
+nnoremap m d
+xnoremap m d
+nnoremap mm dd
+nnoremap M D
+nmap s <plug>(SubversiveSubstitute)
+nmap ss <plug>(SubversiveSubstituteLine)
+nmap S <plug>(SubversiveSubstituteToEndOfLine)
 "
 
 " vim asterisk {

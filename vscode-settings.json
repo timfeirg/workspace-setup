@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Braver's Solarized Light (themed workbench)",
+    "workbench.colorTheme": "Braver's Solarized Dark",
     "vim.enableNeovim": true,
     "vim.neovimPath": "nvim",
     "vim.easymotion": true,
@@ -396,5 +396,9 @@
     "markdown-pdf.clip.height": null,
     "markdown-pdf.height": "50cm",
     "cSpell.enabled": false,
-    "files.autoGuessEncoding": true
+    "files.autoGuessEncoding": true,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "vscode-neovim.neovimExecutablePaths.linux": "/opt/homebrew/bin/nvim"
 }

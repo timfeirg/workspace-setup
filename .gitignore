@@ -1,4 +1,5 @@
 _site
+mini
 *.out
 .ropeproject
 *.min
