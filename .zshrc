@@ -70,6 +70,7 @@ DEFAULT_USER=timfeirg
 DEBIAN_PREVENT_KEYBOARD_CHANGES=yes
 
 export EDITOR=nvim
+alias ag='ag -a'
 alias agq='ag -Q'
 # export MANPAGER="nvim -c 'set ft=man' -"
 alias sudo='sudo '

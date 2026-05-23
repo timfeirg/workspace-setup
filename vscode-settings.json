@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Braver's Solarized Dark",
+    "workbench.colorTheme": "Braver's Solarized Light",
     "vim.enableNeovim": true,
     "vim.neovimPath": "nvim",
     "vim.easymotion": true,
@@ -400,5 +400,7 @@
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
-    "vscode-neovim.neovimExecutablePaths.linux": "/opt/homebrew/bin/nvim"
+    "vscode-neovim.neovimExecutablePaths.linux": "/opt/homebrew/bin/nvim",
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "chat.viewSessions.orientation": "stacked"
 }

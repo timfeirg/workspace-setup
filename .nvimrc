@@ -377,7 +377,7 @@ local on_attach = function(client, bufnr)
 
 end
 
-require('lspconfig').pyright.setup {
+vim.lsp.config("pyright",{
     before_init = function(_, config)
     config.settings = {
         pyright = {
@@ -397,16 +397,16 @@ end,
     on_attach = on_attach,
     capabilities = capabilities,
     flags = {debounce_text_changes = 150}
-}
+})
 
-require('lspconfig').solc.setup{}
+vim.lsp.config('solc', {})
 
-require'lspconfig'.ts_ls.setup{
+vim.lsp.config("ts_ls", {
   filetypes = { "javascript", "typescript", "typescriptreact", "typescript.tsx" },
   root_dir = function() return vim.loop.cwd() end
-}
+})
 
-require('lspconfig').gopls.setup {
+vim.lsp.config('gopls', {
     cmd = {"gopls", "serve"},
     filetypes = {"go", "gomod"},
     root_dir = util.root_pattern("go.work", "go.mod", ".git"),
@@ -418,9 +418,9 @@ require('lspconfig').gopls.setup {
             staticcheck = true,
         },
     },
-}
+})
 
-require'nvim-treesitter.configs'.setup {
+require'nvim-treesitter'.setup {
     ensure_installed = {"python", "go"},
     sync_install = true,
     auto_install = true,
